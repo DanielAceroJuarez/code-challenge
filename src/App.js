@@ -17,7 +17,7 @@ function App() {
 
   function getArtists(term) {
     if (!term) return;
-    axios.get('https://itunes.apple.com/search?term='+term+'&media=music&entity=musicArtist&limit=200')
+    axios.get('https://itunes.apple.com/search?term='+term.toLowerCase()+'&media=music&entity=musicArtist&limit=200')
     .then(res => 
       {    
       setArtists(res.data.results);
